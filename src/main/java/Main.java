@@ -60,7 +60,7 @@ public class Main {
             if ((operandFirst == 0) || (operandSecond == 0)) {
                 throw new RuntimeException("//т.к. римские числа не удовлетворяют условию задания: от I до X");
             }
-        } else if ((roman(strings[0]) && arabic(strings[2]))||(arabic(strings[0]) && roman(strings[2]))){
+        } else if ((roman(strings[0]) && arabic(strings[2])) || (arabic(strings[0]) && roman(strings[2]))) {
             throw new RuntimeException("//т.к. используются одновременно разные системы счисления");
         } else {
             throw new RuntimeException("//т.к. введена не поддерживаемая система счисления, разрешено использовать арабские целые числа от 1 до 10, и римские от I до X");
@@ -78,10 +78,10 @@ public class Main {
         if (arabic(strings[0]) & arabic(strings[2])) {
             result = String.valueOf(res);
         } else if (roman(strings[0]) & roman(strings[2])) {
-            if (res < 1){
+            if (res < 1) {
                 throw new RuntimeException("//т.к. результатом работы калькулятора с римскими числами могут быть только положительные числа");
             }
-            result = romanNumerals[res-1];
+            result = romanNumerals[res - 1];
         }
         return result;
     }
